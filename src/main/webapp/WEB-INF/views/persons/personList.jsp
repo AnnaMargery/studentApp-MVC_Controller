@@ -117,22 +117,26 @@
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                
+
+                                <!-- items wskazuje na atributeName z Controllera -->
+                                <!-- var- mozemy napisać co nam się podoba -->
+
+                                <c:forEach items="${studentModel}" var="student">
                                     <tr>
-                                        <td>Przykładowe Imię</td>
-                                        <td>Przykładowe Nazwisko</td>
-                                        <td><a href="" class="btn btn-info btn-circle">
-                                                                <i class="fas fa-info-circle"></i>
-                                                              </a></td>
-                                         <td>Start</td>
+                                        <td>${student.firstName}</td>
+                                        <td>${student.lastName}</td>
+                                        <td><a href='<c:url value="${student.gitHub}"/>' class="btn btn-info btn-circle">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a></td>
+                                        <td>${student.start}</td>
                                         <td><a href="#" role="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#umiejetnosci"><i class="fas
-                                        fa-check"></i></a></td>
-                                       
-                                        <td><a href='<c:url value="/editStudent"/>'
+                                                    fa-check"></i></a></td>
+
+                                        <td><a href='<c:url value="/editStudent/${student.id}"/>'
                                                class="btn-right btn btn-primary" role="button">Edytuj</a>
                                         </td>
                                     </tr>
-                             
+                                </c:forEach>
                                
                                
                                

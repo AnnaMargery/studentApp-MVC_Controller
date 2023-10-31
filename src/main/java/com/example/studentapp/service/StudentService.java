@@ -5,6 +5,8 @@ import com.example.studentapp.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class StudentService {
@@ -21,5 +23,20 @@ public class StudentService {
         studentRepository.save(studentModel);
     }
 
+    public List<StudentModel> getStudentList(){
+        return studentRepository.findAll();
+    } // findAll metoda z JPA Repository
 
+    public StudentModel getStudentById(Long id){
+        return studentRepository.findById(id).orElse(null);
+        // Optional obchodzimy zw ten sposob
+    }
+
+    public void saveEditStudent(StudentModel editStudent) {
+        studentRepository.save(editStudent);
+    }
+
+    public void delStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
 }

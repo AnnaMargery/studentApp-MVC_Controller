@@ -81,7 +81,7 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-
+<form method="post" action='<c:url value="/editStudent/${student.id}"/>'>
                         <!-- Content Row -->
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-12">
@@ -90,27 +90,27 @@
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label">Imię</label>
                                             <div class="col-10">
-                                                <input class="form-control" type="text" value="Imię">
+                                                <input class="form-control" type="text" name="firstName" value="${student.firstName}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label">Nazwisko</label>
                                             <div class="col-10">
-                                                <input class="form-control" type="text" value="Nazwisko">
+                                                <input class="form-control" type="text" name="lastName" value="${student.lastName}">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label">URL Git</label>
                                             <div class="col-10">
-                                                <input class="form-control" type="text" value="github">
+                                                <input class="form-control" type="text" name="gitHub" value="${student.gitHub}">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-2 col-form-label">Od czego się zaczęło:</label>
                                             <div class="col-10">
-                                                <textarea class="form-control" rows="5">start</textarea>
+                                                <textarea class="form-control" rows="5" name="start">${student.start}</textarea>
                                             </div>
                                         </div>
 
@@ -204,7 +204,7 @@
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
                         Usuń
                     </button>
-
+</form>
                     <!-- The Modal -->
                     <div class="modal" id="myModal">
                         <div class="modal-dialog">
@@ -224,7 +224,9 @@
                                 <!-- Modal footer -->
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
+                                    <form method="post" action='<c:url value="/del/${student.id}"/>'>
                                     <input type="submit" class="btn btn-danger pull-left" value="Tak"/>
+                                    </form>
                                 </div>
 
                             </div>
