@@ -50,8 +50,6 @@
             </li>
 
 
-
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -94,6 +92,8 @@
     <label for="firstName" class="col-2 col-form-label">Wybierz kursanta</label>
     <div class="col-10">
   <select class="form-control" id="sel1">
+      <!-- tutaj chyba odwołać sie do relacji ze studentem -->
+
     <option hidden>wybierz</option>
     <option>kursant1</option>
     <option>kursant2</option>
@@ -107,7 +107,7 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Deadline</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="date" placeholder="">
+                                            <input class="form-control" type="date" name = "deadline" placeholder="uzupełnij koncowa date">
                                         </div>
                             </div>
                           
@@ -115,7 +115,7 @@
                             <div class="form-group row">
                                 <label class="col-2 col-form-label">Tresć zadania:</label>
                                 <div class="col-10">
-                                <textarea class="form-control" rows="5" placeholder="tutaj opisz zadanie..."></textarea>
+                                <textarea class="form-control" rows="5" name = "description" placeholder="tutaj opisz zadanie..."></textarea>
                                 </div>
                             </div>
 
